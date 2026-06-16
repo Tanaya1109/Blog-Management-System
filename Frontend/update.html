@@ -1,0 +1,299 @@
+<!-- <h1>Update Blog</h1>
+
+<form action="/update/{{ blog.id }}" method="post">
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="{{ blog.title }}"><br><br>
+
+    <label>Content:</label><br>
+    <textarea name="content" rows="5" cols="30">{{ blog.content }}</textarea><br><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="author" value="{{ blog.author }}"><br><br>
+
+    <button type="submit">Update Blog</button>
+
+</form> -->
+
+<!-- <!DOCTYPE html>
+
+<html>
+<head>
+    <title>Update Blog</title>
+
+```
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+        background:linear-gradient(135deg,#1e3c72,#2a5298);
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .container{
+        background:white;
+        width:500px;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    h1{
+        text-align:center;
+        margin-bottom:25px;
+        color:#1e3c72;
+    }
+
+    label{
+        font-weight:bold;
+    }
+
+    input, textarea{
+        width:100%;
+        padding:10px;
+        margin-top:5px;
+        border:1px solid #ccc;
+        border-radius:8px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        background:#ff9800;
+        color:white;
+        border:none;
+        border-radius:8px;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        opacity:0.9;
+    }
+
+    .back{
+        display:block;
+        text-align:center;
+        margin-top:15px;
+        text-decoration:none;
+        color:#1e3c72;
+        font-weight:bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h1>Update Blog</h1>
+
+<form action="/update/{{ blog.id }}" method="post">
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="{{ blog.title }}"><br><br>
+
+    <label>Content:</label><br>
+    <textarea name="content" rows="5">{{ blog.content }}</textarea><br><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="author" value="{{ blog.author }}"><br><br>
+
+    <button type="submit">
+        Update Blog
+    </button>
+
+</form>
+
+<a href="/" class="back">
+    Back to Home
+</a>
+```
+
+</div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            width: 100%;
+            max-width: 480px;
+            padding: 2rem 2.25rem;
+            border-radius: 12px;
+            border: 0.5px solid #e0e0e0;
+        }
+
+        .card-header {
+            margin-bottom: 1.75rem;
+        }
+
+        .edit-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #eef3fc;
+            color: #1a3f7a;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-header h1 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #111;
+            margin-bottom: 4px;
+        }
+
+        .card-header p {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input, textarea {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 14px;
+            padding: 9px 12px;
+            border: 0.5px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            color: #111;
+            outline: none;
+            transition: border-color 0.15s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #378ADD;
+            box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.12);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+            line-height: 1.6;
+        }
+
+        .divider {
+            border: none;
+            border-top: 0.5px solid #f0f0f0;
+            margin: 1.5rem 0;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #1a3f7a;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+
+        .btn:hover {
+            background: #15336a;
+        }
+
+        .btn:active {
+            background: #0f2555;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 13px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        <div class="edit-badge">Editing post</div>
+        <h1>Update blog</h1>
+        <p>Make changes below and save to update your post.</p>
+    </div>
+
+    <form action="/update/{{ blog.id }}" method="post">
+        <div class="field">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="{{ blog.title }}">
+        </div>
+
+        <div class="field">
+            <label for="content">Content</label>
+            <textarea id="content" name="content">{{ blog.content }}</textarea>
+        </div>
+
+        <div class="field">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" value="{{ blog.author }}">
+        </div>
+
+        <hr class="divider">
+
+        <button type="submit" class="btn">Save changes</button>
+    </form>
+
+    <a href="/" class="back-link">← Back to home</a>
+</div>
+
+</body>
+</html>
