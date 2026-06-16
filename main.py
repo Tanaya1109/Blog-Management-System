@@ -101,7 +101,6 @@ def update_blog(
     blog_id: int,
     title: str = Form(...),
     content: str = Form(...),
-    
     author: str = Form(...),
     db: Session = Depends(get_db)
 ):
